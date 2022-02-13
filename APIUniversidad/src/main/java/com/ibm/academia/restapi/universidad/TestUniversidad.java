@@ -4,8 +4,9 @@
  */
 package com.ibm.academia.restapi.universidad;
 
-import com.ibm.academia.restapi.universidad.modelo.entidades.Carrera;
-import com.ibm.academia.restapi.universidad.servicios.CarreraDAO;
+import com.ibm.academia.restapi.universidad.modelo.entidades.*;
+import com.ibm.academia.restapi.universidad.servicios.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,12 +15,17 @@ import org.springframework.stereotype.Component;
 public class TestUniversidad implements CommandLineRunner{
 @Autowired
     private CarreraDAO carreraDAO;
+
+        
             
     @Override
     public void run(String... args) throws Exception {
         Carrera IngenieriaSistemas = new Carrera(null, "sistemas", 60, 5, "bislas");
        Carrera carrera = carreraDAO.guardar(IngenieriaSistemas);
         System.out.println(carrera.toString());
+
+		
+	  		   
     }
     
 }
